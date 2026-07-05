@@ -1,0 +1,4 @@
+{
+  "counts": { "WID-1": 340, "WID-2": 18, "GAD-3": 96 },
+  "holds": [{ "sku": "WID-2", "qty": 6, "reason": "QA check" }]
+}

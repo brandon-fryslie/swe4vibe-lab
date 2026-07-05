@@ -1,0 +1,224 @@
+### (none)
+WEEKLY TRAFFIC
+/home | 4120
+/pricing | 980
+/blog/ai | 2210
+/careers | 0
+/docs | 640
+/beta | 0
+### header
+WEEKLY TRAFFIC
+PAGE | VISITS
+/home | 4120
+/pricing | 980
+/blog/ai | 2210
+/careers | 0
+/docs | 640
+/beta | 0
+### percents
+WEEKLY TRAFFIC
+/home | 4120 | 52%
+/pricing | 980 | 12%
+/blog/ai | 2210 | 28%
+/careers | 0 | 0%
+/docs | 640 | 8%
+/beta | 0 | 0%
+### header+percents
+WEEKLY TRAFFIC
+PAGE | VISITS | SHARE
+/home | 4120 | 52%
+/pricing | 980 | 12%
+/blog/ai | 2210 | 28%
+/careers | 0 | 0%
+/docs | 640 | 8%
+/beta | 0 | 0%
+### topThree
+WEEKLY TRAFFIC
+/home | 4120
+/blog/ai | 2210
+/pricing | 980
+### header+topThree
+WEEKLY TRAFFIC
+PAGE | VISITS
+/home | 4120
+/blog/ai | 2210
+/pricing | 980
+### percents+topThree
+WEEKLY TRAFFIC
+/home | 4120 | 56%
+/blog/ai | 2210 | 30%
+/pricing | 980 | 13%
+### header+percents+topThree
+WEEKLY TRAFFIC
+PAGE | VISITS | SHARE
+/home | 4120 | 56%
+/blog/ai | 2210 | 30%
+/pricing | 980 | 13%
+### hideEmpty
+WEEKLY TRAFFIC
+/home | 4120
+/pricing | 980
+/blog/ai | 2210
+/docs | 640
+### header+hideEmpty
+WEEKLY TRAFFIC
+PAGE | VISITS
+/home | 4120
+/pricing | 980
+/blog/ai | 2210
+/docs | 640
+### percents+hideEmpty
+WEEKLY TRAFFIC
+/home | 4120 | 52%
+/pricing | 980 | 12%
+/blog/ai | 2210 | 28%
+/docs | 640 | 8%
+### header+percents+hideEmpty
+WEEKLY TRAFFIC
+PAGE | VISITS | SHARE
+/home | 4120 | 52%
+/pricing | 980 | 12%
+/blog/ai | 2210 | 28%
+/docs | 640 | 8%
+### topThree+hideEmpty
+WEEKLY TRAFFIC
+/home | 4120
+/blog/ai | 2210
+/pricing | 980
+### header+topThree+hideEmpty
+WEEKLY TRAFFIC
+PAGE | VISITS
+/home | 4120
+/blog/ai | 2210
+/pricing | 980
+### percents+topThree+hideEmpty
+WEEKLY TRAFFIC
+/home | 4120 | 56%
+/blog/ai | 2210 | 30%
+/pricing | 980 | 13%
+### header+percents+topThree+hideEmpty
+WEEKLY TRAFFIC
+PAGE | VISITS | SHARE
+/home | 4120 | 56%
+/blog/ai | 2210 | 30%
+/pricing | 980 | 13%
+### totalRow
+WEEKLY TRAFFIC
+/home | 4120
+/pricing | 980
+/blog/ai | 2210
+/careers | 0
+/docs | 640
+/beta | 0
+TOTAL | 7950
+### header+totalRow
+WEEKLY TRAFFIC
+PAGE | VISITS
+/home | 4120
+/pricing | 980
+/blog/ai | 2210
+/careers | 0
+/docs | 640
+/beta | 0
+TOTAL | 7950
+### percents+totalRow
+WEEKLY TRAFFIC
+/home | 4120 | 52%
+/pricing | 980 | 12%
+/blog/ai | 2210 | 28%
+/careers | 0 | 0%
+/docs | 640 | 8%
+/beta | 0 | 0%
+TOTAL | 7950
+### header+percents+totalRow
+WEEKLY TRAFFIC
+PAGE | VISITS | SHARE
+/home | 4120 | 52%
+/pricing | 980 | 12%
+/blog/ai | 2210 | 28%
+/careers | 0 | 0%
+/docs | 640 | 8%
+/beta | 0 | 0%
+TOTAL | 7950
+### topThree+totalRow
+WEEKLY TRAFFIC
+/home | 4120
+/blog/ai | 2210
+/pricing | 980
+TOTAL | 7310
+### header+topThree+totalRow
+WEEKLY TRAFFIC
+PAGE | VISITS
+/home | 4120
+/blog/ai | 2210
+/pricing | 980
+TOTAL | 7310
+### percents+topThree+totalRow
+WEEKLY TRAFFIC
+/home | 4120 | 56%
+/blog/ai | 2210 | 30%
+/pricing | 980 | 13%
+TOTAL | 7310
+### header+percents+topThree+totalRow
+WEEKLY TRAFFIC
+PAGE | VISITS | SHARE
+/home | 4120 | 56%
+/blog/ai | 2210 | 30%
+/pricing | 980 | 13%
+TOTAL | 7310
+### hideEmpty+totalRow
+WEEKLY TRAFFIC
+/home | 4120
+/pricing | 980
+/blog/ai | 2210
+/docs | 640
+TOTAL | 7950
+### header+hideEmpty+totalRow
+WEEKLY TRAFFIC
+PAGE | VISITS
+/home | 4120
+/pricing | 980
+/blog/ai | 2210
+/docs | 640
+TOTAL | 7950
+### percents+hideEmpty+totalRow
+WEEKLY TRAFFIC
+/home | 4120 | 52%
+/pricing | 980 | 12%
+/blog/ai | 2210 | 28%
+/docs | 640 | 8%
+TOTAL | 7950
+### header+percents+hideEmpty+totalRow
+WEEKLY TRAFFIC
+PAGE | VISITS | SHARE
+/home | 4120 | 52%
+/pricing | 980 | 12%
+/blog/ai | 2210 | 28%
+/docs | 640 | 8%
+TOTAL | 7950
+### topThree+hideEmpty+totalRow
+WEEKLY TRAFFIC
+/home | 4120
+/blog/ai | 2210
+/pricing | 980
+TOTAL | 7310
+### header+topThree+hideEmpty+totalRow
+WEEKLY TRAFFIC
+PAGE | VISITS
+/home | 4120
+/blog/ai | 2210
+/pricing | 980
+TOTAL | 7310
+### percents+topThree+hideEmpty+totalRow
+WEEKLY TRAFFIC
+/home | 4120 | 56%
+/blog/ai | 2210 | 30%
+/pricing | 980 | 13%
+TOTAL | 7310
+### header+percents+topThree+hideEmpty+totalRow
+WEEKLY TRAFFIC
+PAGE | VISITS | SHARE
+/home | 4120 | 56%
+/blog/ai | 2210 | 30%
+/pricing | 980 | 13%
+TOTAL | 7310

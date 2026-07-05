@@ -1,0 +1,30 @@
+{
+ "emails": [
+  "lnguyen@school.edu",
+  "sokafor@school.edu",
+  "mreyes@school.edu",
+  "tbarnes@school.edu"
+ ],
+ "name0": "Lily Nguyen",
+ "honor": [
+  "Lily Nguyen",
+  "Maya Reyes"
+ ],
+ "b12": [
+  "Lily Nguyen",
+  "Maya Reyes"
+ ],
+ "find": [
+  "S121",
+  "Reyes",
+  "Maya",
+  "mreyes@school.edu",
+  "3.9",
+  "B12"
+ ],
+ "merge": {
+  "to": "tbarnes@school.edu",
+  "greeting": "Dear Theo,",
+  "room": "C07"
+ }
+}

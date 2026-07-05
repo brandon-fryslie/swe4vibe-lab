@@ -1,0 +1,8 @@
+{
+  "location": { "city": "Portland", "region": "OR" },
+  "forecast": [
+    { "day": "Mon", "high": 78, "low": 58, "conditions": "Sunny" },
+    { "day": "Tue", "high": 74, "low": 56, "conditions": "Partly cloudy" },
+    { "day": "Wed", "high": 69, "low": 55, "conditions": "Rain" }
+  ]
+}
