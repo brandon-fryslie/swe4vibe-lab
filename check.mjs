@@ -25,9 +25,12 @@ for (const name of specimens) {
     console.log(`PASS ${name}`)
   } else {
     failed++
-    console.log(`FAIL ${name} (exit ${r.status})`)
-    process.stdout.write(r.stdout)
-    process.stderr.write(r.stderr)
+    // [LAW:no-silent-failure] a spawn that never ran (status null, error set)
+    // must report as its own failure mode, not crash the report
+    console.log(`FAIL ${name} (exit ${r.status}${r.signal ? `, signal ${r.signal}` : ''})`)
+    if (r.error) console.log(`  spawn error: ${r.error.message}`)
+    process.stdout.write(r.stdout ?? '')
+    process.stderr.write(r.stderr ?? '')
   }
 }
 
