@@ -1,6 +1,6 @@
 {
   "name": "swe4vibe-swamp",
-  "private": true,
+  "private": false,
   "type": "module",
   "description": "The swamp: every swe4vibe scar as real runnable code — the diseased version and the fixed version, side by side.",
   "engines": {
