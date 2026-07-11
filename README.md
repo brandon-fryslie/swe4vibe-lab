@@ -32,7 +32,7 @@ Some specimens carry extras: a fixture (the API response the code was written ag
 
 ## The specimens
 
-Alphabetical — deliberately. The teaching order is the course's job, not the filesystem's.
+Listed alphabetically — deliberately. The directory names carry no numbers, because the *teaching* order is the course's to decide, not the filesystem's (see "Teaching order" below).
 
 | Directory | The scar |
 |---|---|
@@ -60,3 +60,31 @@ Alphabetical — deliberately. The teaching order is the course's job, not the f
 | `your-code-is-allowed-to-lie` | A stale stored count, a function whose name stopped being true, a comment sorting the wrong way — and nothing in the file checks any of it. |
 
 Every specimen maps to one swe4vibe lesson (same name). The free one — `fixing-one-breaks-three` — is published in full at [swe4vibe.com](https://swe4vibe.com).
+
+## Teaching order
+
+The course walks these scars in a deliberate sequence — it opens on the wall you're already at, threads each scar into the next, and closes on the promise that the list is finite. The directories stay alphabetical so no single ordering is baked into the filesystem; this is the reading order, and each specimen names the one software-engineering law it makes concrete:
+
+1. `fixing-one-breaks-three` — decomposition *(the free lesson, published whole)*
+2. `ai-goes-in-circles` — make illegal states unrepresentable
+3. `works-tuesday-dead-wednesday` — no ambient temporal coupling
+4. `change-the-screen-break-the-data` — effects at the boundaries
+5. `fix-it-still-wrong` — one source of truth
+6. `cant-reuse-your-own-code` — composability
+7. `every-feature-slower-than-the-last` — carrying cost
+8. `same-thing-three-times` — one type per behavior
+9. `maze-of-if-statements` — dataflow, not control flow
+10. `bugs-silently-vanish` — no defensive null guards
+11. `works-but-quietly-wrong` — no silent failure
+12. `wrong-thing-perfectly` — verifiable goals *(specifying the work)*
+13. `i-think-it-works` — verifiable goals *(checking the work)*
+14. `tests-break-when-you-clean-up` — test behavior, not structure
+15. `comments-are-all-lies` — comments explain *why* only
+16. `your-code-is-allowed-to-lie` — every representation must tell the truth
+17. `re-explain-every-session` — one source of truth *(across time)*
+18. `one-giant-tangled-thing` — parts and seams
+19. `diff-you-cant-review` — parts and seams *(in practice)*
+20. `breaks-things-from-a-distance` — no shared mutable globals
+21. `one-change-twenty-files` — locality, or a seam
+22. `one-more-option-broke-everything` — no mode explosion *(the list is finite)*
+

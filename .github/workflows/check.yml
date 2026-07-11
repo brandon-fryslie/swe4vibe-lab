@@ -1,0 +1,25 @@
+# Runs every specimen's self-check on push and PR. Green iff every claimed
+# before-failure and after-immunity actually holds when executed — the same
+# gate the repo README points at.
+#
+# CAVEAT — nested spawn: check.mjs runs each specimen's demo.mjs as a child
+# node process (spawnSync). Some *sandboxed* execution environments block a
+# process from spawning further processes, so check.mjs can only report FAIL
+# for a demo it was never allowed to start. A standard GitHub-hosted runner has
+# no such restriction, so the command is just plain `node check.mjs` — do not
+# wrap it in any sandbox that forbids nested spawns, or the run is meaningless.
+name: check
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - run: node check.mjs
