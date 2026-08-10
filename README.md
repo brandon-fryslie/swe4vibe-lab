@@ -1,4 +1,4 @@
-# The swamp
+# The lab
 
 Real diseased code, next to the fixed version, with a runnable proof that the disease is real.
 
@@ -53,6 +53,7 @@ Listed alphabetically — deliberately. The directory names carry no numbers, be
 | `one-more-option-broke-everything` | Five boolean options, thirty-two programs, and an interaction bug that fires only in the combination nobody tested. |
 | `re-explain-every-session` | Session 1 was told "money is integer cents" in chat; session 2 adds a $4.99 fee as dollars — the rule lived in a place that evaporates. |
 | `same-thing-three-times` | Three alert builders that differ only by prefix, length cap, and suffix — three types where there is one. |
+| `single-enforcer` | The same admin permission check pasted into six handlers — five got patched for a new rule, the sixth didn't, and now a suspended admin can still push through a refund. |
 | `tests-break-when-you-clean-up` | A test suite that goes red when you *improve* the code and stays green when you *break* it. |
 | `works-but-quietly-wrong` | An empty catch and a `|| 0` turn "the fetch failed" into "0 units in stock" — and the reorder system believes it. |
 | `works-tuesday-dead-wednesday` | Two in-flight responses race, the stale one lands last, and the screen lies — but only when you click fast. |
@@ -87,4 +88,5 @@ The course walks these scars in a deliberate sequence — it opens on the wall y
 20. `breaks-things-from-a-distance` — no shared mutable globals
 21. `one-change-twenty-files` — locality, or a seam
 22. `one-more-option-broke-everything` — no mode explosion *(the list is finite)*
+23. `single-enforcer` — one checkpoint per rule *(extension, appended after the finite list)*
 

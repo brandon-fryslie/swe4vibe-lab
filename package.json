@@ -1,8 +1,8 @@
 {
-  "name": "swe4vibe-swamp",
+  "name": "swe4vibe-lab",
   "private": false,
   "type": "module",
-  "description": "The swamp: every swe4vibe scar as real runnable code — the diseased version and the fixed version, side by side.",
+  "description": "The lab: every swe4vibe scar as real runnable code — the diseased version and the fixed version, side by side.",
   "engines": {
     "node": ">=18"
   },
