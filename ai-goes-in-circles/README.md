@@ -1,6 +1,6 @@
 # ai-goes-in-circles
 
-**The scar:** the AI keeps "fixing" the bug and it keeps coming back in a different costume — banner stuck, then banner next to results, then the spinner jammed. Fourth time this week.
+**The scar:** the AI keeps "fixing" the bug and it keeps coming back with a different symptom — banner stuck, then banner next to results, then the spinner jammed. Fourth time this week.
 
 **The disease:** illegal states. **A bug that keeps coming back doesn't live in your logic. It lives in the states your data is allowed to be in.** Four separate flags that are supposed to move together can combine into sixteen states when only four are real — and every AI patch locks one door of a twelve-door mansion. The full walk-through is the swe4vibe lesson of the same name.
 

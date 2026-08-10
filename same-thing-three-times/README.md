@@ -2,7 +2,7 @@
 
 **The scar:** `InfoCard`, `WarningCard`, `ErrorCard` — you see them side by side one day and actually read them. They're the same. Not similar, *the same*, ninety percent line for line, and you can't tell whether the other ten percent is on purpose. Nobody decided this. It assembled itself while you were looking directly at it.
 
-**The disease:** sameness enforced by nothing. **If two pieces of code differ only in their values, they aren't two pieces of code — they're one piece of code and a table.** In `alerts.js`, three alert builders differ by a prefix, a length limit, and a suffix — values wearing function costumes. Nothing says "these must stay identical," so keeping them identical is a memory job, and memory jobs are forgotten by default. The full story is in the swe4vibe lesson of the same name.
+**The disease:** sameness enforced by nothing. **If two pieces of code differ only in their values, they aren't two pieces of code — they're one piece of code and a table.** In `alerts.js`, three alert builders differ by a prefix, a length limit, and a suffix — a table of values written out as three functions. Nothing says "these must stay identical," so keeping them identical is a memory job, and memory jobs are forgotten by default. The full story is in the swe4vibe lesson of the same name.
 
 ## Files
 
