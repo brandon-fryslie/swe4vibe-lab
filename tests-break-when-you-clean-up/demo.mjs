@@ -1,5 +1,5 @@
 // The lesson's 2x2 matrix, executed twice — once inline on a cart module, once
-// on the real slugify specimen in this directory:
+// on the real slugify module in this directory:
 //   a STRUCTURE suite (spies, helper-existence, call counts) goes RED on a
 //   behavior-preserving cleanup and stays GREEN on a real bug; a BEHAVIOR
 //   suite (the contract) does exactly the opposite. Wrong in both directions.
@@ -74,7 +74,7 @@ console.log('cart module — suite \\ code   original   honest cleanup   real bu
 console.log(`structure suite                 ${cartMatrix.original.structure}/3        ${cartMatrix.cleanup.structure}/3              ${cartMatrix.bug.structure}/3`)
 console.log(`behavior suite                  ${cartMatrix.original.behavior}/3        ${cartMatrix.cleanup.behavior}/3              ${cartMatrix.bug.behavior}/3`)
 
-// the whole atom in four cells:
+// the whole lesson in four cells:
 assert.equal(cartMatrix.cleanup.structure, 0) // red on the change that broke nothing
 assert.equal(cartMatrix.bug.structure, 3) // green on the change that broke everything
 assert.equal(cartMatrix.cleanup.behavior, 3) // silent on the cleanup
@@ -82,7 +82,7 @@ assert.equal(cartMatrix.bug.behavior, 1) // loud on the bug
 assert.equal(cartMatrix.original.structure, 3)
 assert.equal(cartMatrix.original.behavior, 3)
 
-// ---------- matrix 2: the slugify specimen, suites actually spawned ----------
+// ---------- matrix 2: the slugify module, suites actually spawned ----------
 // Assemble each probe (a slugify.js variant + both real suites) in a temp dir
 // and run the suites as processes — exit codes are the contract.
 const runSuites = (variantDir) => {
@@ -103,7 +103,7 @@ const original = runSuites('.')
 const refactor = runSuites('probe-refactor')
 const bug = runSuites('probe-bug')
 
-console.log('\nslugify specimen — old suite (4 of 6 tests are structure) vs contract suite:')
+console.log('\nslugify module — old suite (4 of 6 tests are structure) vs contract suite:')
 console.log(`  original module:            old suite exit ${original.structure.status}, contract exit ${original.contract.status}`)
 console.log(`  behavior-preserving refactor: old suite exit ${refactor.structure.status} (dies demanding the deleted export), contract exit ${refactor.contract.status}`)
 console.log(`  planted bug (lowercase dropped): old suite exit ${bug.structure.status}, contract exit ${bug.contract.status} — but look closer:`)

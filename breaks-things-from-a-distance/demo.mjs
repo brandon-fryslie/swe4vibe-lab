@@ -5,7 +5,7 @@
 //     banner — two screens whose code did not change, zero errors.
 //   after — one owner, readers get copies: 100 top-rated views, arrivals
 //     never move.
-//   specimen — player.js is the whole disease family in one file: the
+//   module — player.js is the whole disease family in one file: the
 //     view-that-writes, the live-reference "snapshot" (with one stale field —
 //     two lies in one shape), the push(callerObject) reach-back, plus the
 //     sanctioned mutation (shuffle) and an immutable config that must survive
@@ -71,8 +71,8 @@ console.log('  new arrivals after 100 top-rated views:', arrivals2())
 assert.equal(arrivals2(), 'Desk Mat, Lamp, Notebook, Pen Set')
 assert.equal(banner2(), 'New this week: Desk Mat')
 
-// ---------- the specimen: player.js, the disease family live ----------
-console.log('\nspecimen (player.js):')
+// ---------- the module: player.js, the disease family live ----------
+console.log('\nbroken version (player.js):')
 
 // fresh state is correct
 assert.equal(player.nowPlayingBar(), 'Golden Hour — Nia (vol 7)')
@@ -110,7 +110,7 @@ console.log('  mutating a track after adding it rewrote the stored queue entry')
 assert.equal(player.canImport('song.flac'), true)
 assert.equal(player.canImport('song.wav'), false)
 
-// ---------- the fixed twin, probed in full ----------
+// ---------- the fixed version, probed in full ----------
 // probe-fixed.mjs asserts: views sort copies, the snapshot is detached, the
 // reach-back is severed, partyMode/sleepTimer still work, AND the sanctioned
 // mutation (shuffle) survives as the owner's writer.

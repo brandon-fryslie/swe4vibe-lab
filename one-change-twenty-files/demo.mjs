@@ -5,7 +5,7 @@
 //     ships 'undefined' to a user — silent, no crash.
 //   after — one adapter owns the outside shape: the same rename is one edit,
 //     and no surface can even spell the raw field name.
-//   specimen — roster.js knows the registrar CSV's column order in 13 places
+//   module — roster.js knows the registrar CSV's column order in 13 places
 //     across 6 functions; roster-fixed.js confines all of it to one translator
 //     (toStudent) with behavior identical to golden.json.
 // Exit 0 iff every claim holds when actually run.
@@ -72,7 +72,7 @@ for (const [k, f] of Object.entries(after)) console.log('  ' + k + ': ' + f(movi
 assert.ok(!Object.values(after).some(f => f(movie).includes('undefined')))
 console.log('places that knew the outside field name: before 5, after 1 (parseMovie)')
 
-// ---------- the specimen: roster.js vs roster-fixed.js ----------
+// ---------- the module: roster.js vs roster-fixed.js ----------
 // behavior identical, proven against the golden probe set
 const golden = JSON.parse(readFileSync(join(here, 'golden.json'), 'utf8'))
 const probe = (m) => {
@@ -88,7 +88,7 @@ const probe = (m) => {
 }
 assert.deepEqual(probe(before), golden)
 assert.deepEqual(probe(fixed), golden)
-console.log('\nspecimen: roster.js and roster-fixed.js both match golden.json exactly')
+console.log('\nexample: roster.js and roster-fixed.js both match golden.json exactly')
 
 // the census, executed: how many places spell a raw column index?
 const countSites = (file) => (readFileSync(join(here, file), 'utf8').match(/\br(?:ow)?\[\d\]/g) || []).length

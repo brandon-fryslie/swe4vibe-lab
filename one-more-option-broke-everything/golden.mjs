@@ -1,4 +1,4 @@
-// My golden-output harness for the diseased module: runs all 32 combos of the five
+// My golden-output harness for the broken version: runs all 32 combos of the five
 // boolean options against the original file (or a fixed file passed as argv)
 // and prints a stable digest, so before/after can be diffed combo by combo.
 const file = process.argv[2] || './traffic-report.js'

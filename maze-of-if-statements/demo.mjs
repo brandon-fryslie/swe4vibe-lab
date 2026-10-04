@@ -4,7 +4,7 @@
 //     at the bottom like every rule before it, is DEAD ON ARRIVAL (60 orders → gold).
 //   after — rules are data carrying the value that matters; the same careless
 //     edit (row appended last) works, and every pre-platinum user is unchanged.
-//   specimen — priority.js has a planted shadowed rule (`pro && ageDays > 5`)
+//   module — priority.js has a planted shadowed rule (`pro && ageDays > 5`)
 //     that can never win; as branches that's invisible, as data it's computable.
 //     priority-fixed.js drops it and is behavior-identical across the full grid.
 // Exit 0 iff every claim holds when actually run.
@@ -56,7 +56,7 @@ for (let orders = 0; orders <= 50; orders++) {
 }
 console.log('  all pre-platinum users unchanged — position stopped mattering; priority lives in the values.')
 
-// ---------- the specimen: priority.js and its planted dead rule ----------
+// ---------- the module: priority.js and its planted dead rule ----------
 const load = (file, names) => {
   const code = readFileSync(new URL(file, import.meta.url), 'utf8')
   return new Function(code + `\n;return { ${names.join(', ')} };`)()
@@ -79,7 +79,7 @@ for (const t of grid) {
   assert.equal(fixed.supportPriority(t), beforeTriage(t),
     `diverged: ${JSON.stringify(t)}`)
 }
-console.log(`\nspecimen: priority-fixed.js matches priority.js on all ${grid.length} grid inputs —`)
+console.log(`\nexample: priority-fixed.js matches priority.js on all ${grid.length} grid inputs —`)
 console.log('the `pro && ageDays > 5` branch it deleted was dead weight, not behavior.')
 
 // claim: as DATA, deadness is computable. Re-plant the original rule as a row

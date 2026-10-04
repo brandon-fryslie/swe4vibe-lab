@@ -10,7 +10,7 @@
 //     The edit bill went UP: request 1 touched 3 places, request 2 touched 4.
 //   after (one pricing home): request 1 = one value, request 2 = one line;
 //     quote and invoice cannot disagree; the curve is flat.
-// Then the real specimen (shipping.js / shipping-fixed.js): the fixed twin has
+// Then the real module (shipping.js / shipping-fixed.js): the fixed version has
 // already taken its next feature — a 6% fuel surcharge — as ONE line, and a
 // full input grid proves it landed on every price, every method, every copy.
 // Exit 0 iff the claims hold when actually run.
@@ -97,13 +97,13 @@ assert.equal(cents(quote(hol)), cents(1015)) // the lesson's number: 900 + 40 + 
 assert.equal(cents(quote(hol)), cents(invoice(hol) / TAX))
 console.log('AFTER edit bill: request 1 → 1 value, request 2 → 1 line. Flat.')
 
-// ---------- the real specimen: the NEXT feature, landed once ----------
+// ---------- the real module: the NEXT feature, landed once ----------
 // shipping.js holds the pricing rule in four places (three calculators + the
 // checkout copy marked "keep in sync!"). shipping-fixed.js is the same
 // calculator with one pricing home — which has already taken the next feature,
 // a 6% fuel surcharge, as one line. If that claim is true, every fixed price is
 // exactly 1.06× the welded price: every method, every input, the checkout copy too.
-const loadSpecimen = (file) => {
+const loadModule = (file) => {
   const els = {}
   const doc = { getElementById: (id) => (els[id] ??= { value: '0', textContent: '' }) }
   const ctx = vm.createContext({ document: doc })
@@ -117,8 +117,8 @@ const calcNames = { standard: 'calcStandardShipping', express: 'calcExpressShipp
 let checks = 0
 for (const w of [0, 0.5, 1, 5, 19.99, 20, 20.01, 25, 100]) {
   for (const d of [0, 1, 50, 99.5, 100, 100.5, 101, 250, 5000]) {
-    const a = loadSpecimen('shipping.js')
-    const b = loadSpecimen('shipping-fixed.js')
+    const a = loadModule('shipping.js')
+    const b = loadModule('shipping-fixed.js')
     for (const x of [a, b]) {
       x.doc.getElementById('pkg-weight').value = String(w)
       x.doc.getElementById('pkg-distance').value = String(d)
@@ -133,7 +133,7 @@ for (const w of [0, 0.5, 1, 5, 19.99, 20, 20.01, 25, 100]) {
     }
   }
 }
-console.log(`\nSPECIMEN shipping-fixed.js: the 6% fuel surcharge (one line) landed on every price — ${checks} checks across the input grid, zero copies missed.`)
+console.log(`\nFIXED shipping-fixed.js: the 6% fuel surcharge (one line) landed on every price — ${checks} checks across the input grid, zero copies missed.`)
 console.log('In shipping.js the same feature is four separate edits — with a miss chance on each. You just watched what the miss does.')
 
 console.log('\nclaims hold: the welded shape bills every feature to every copy; the one-home shape takes features as single edits.')

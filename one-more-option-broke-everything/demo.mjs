@@ -6,7 +6,7 @@
 //   after — options become values (a discount list, a shipping fee) flowing
 //     through ONE audited path: every healthy combo matches to the cent, and
 //     the negative cell is impossible by construction.
-//   specimen — traffic-report.js carries FIVE flags (32 programs) with two
+//   module — traffic-report.js carries FIVE flags (32 programs) with two
 //     meaning-shift interactions and a latent NaN% cell; the fixed version
 //     translates flags to values at the boundary and reproduces all 32 combos
 //     byte-identically (golden-32-combos.txt) — the tensions it preserves are
@@ -92,7 +92,7 @@ function beforeGoods(items, opts) {
   return sum
 }
 
-let matches = 0, diseased = 0, negatives = 0
+let matches = 0, broken = 0, negatives = 0
 for (const opts of combos) {
   const { discounts, shippingFee } = asValues(opts)
   const beforeT = total(cheapCart, opts)
@@ -101,16 +101,16 @@ for (const opts of combos) {
   if (beforeGoods(cheapCart, opts) >= 0) {
     if (Math.abs(beforeT - afterT) < 1e-9) matches++
   } else {
-    diseased++
+    broken++
   }
 }
 console.log('\n=== AFTER: same 16 configurations as data through ONE path ===')
-console.log(`healthy combos matching to the cent: ${matches} of ${16 - diseased}; diseased cells repaired: ${diseased}; negative totals possible: ${negatives}`)
-assert.equal(matches, 16 - diseased)   // every healthy combo matches exactly
-assert.ok(diseased > 0)                // the dark cells were real
+console.log(`healthy combos matching to the cent: ${matches} of ${16 - broken}; broken cells repaired: ${broken}; negative totals possible: ${negatives}`)
+assert.equal(matches, 16 - broken)   // every healthy combo matches exactly
+assert.ok(broken > 0)                // the dark cells were real
 assert.equal(negatives, 0)             // and no combination can go negative now
 
-// ---------- the specimen: five flags, 32 programs, one golden ----------
+// ---------- the module: five flags, 32 programs, one golden ----------
 const golden = readFileSync(join(here, 'golden-32-combos.txt'), 'utf8')
 const digest = (file) => spawnSync(process.execPath, [join(here, 'golden.mjs'), './' + file], { cwd: here, encoding: 'utf8' })
 const beforeRun = digest('traffic-report.js')
@@ -119,7 +119,7 @@ assert.equal(beforeRun.status, 0)
 assert.equal(afterRun.status, 0)
 assert.equal(beforeRun.stdout, golden)
 assert.equal(afterRun.stdout, golden)
-console.log('\nspecimen: all 32 flag combos of traffic-report.js and traffic-report-fixed.js match golden-32-combos.txt byte-for-byte')
+console.log('\nexample: all 32 flag combos of traffic-report.js and traffic-report-fixed.js match golden-32-combos.txt byte-for-byte')
 
 // the preserved tensions — interactions no one designed, kept identical by the
 // honest refactor and flagged instead of silently redefined:

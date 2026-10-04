@@ -2,7 +2,7 @@
   "name": "swe4vibe-lab",
   "private": false,
   "type": "module",
-  "description": "The lab: every swe4vibe scar as real runnable code — the diseased version and the fixed version, side by side.",
+  "description": "The lab: every swe4vibe lesson as real runnable code — the broken version and the fixed version, side by side.",
   "engines": {
     "node": ">=18"
   },

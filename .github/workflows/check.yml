@@ -1,8 +1,8 @@
-# Runs every specimen's self-check on push and PR. Green iff every claimed
+# Runs every example's self-check on push and PR. Green iff every claimed
 # before-failure and after-immunity actually holds when executed — the same
 # gate the repo README points at.
 #
-# CAVEAT — nested spawn: check.mjs runs each specimen's demo.mjs as a child
+# CAVEAT — nested spawn: check.mjs runs each example's demo.mjs as a child
 # node process (spawnSync). Some *sandboxed* execution environments block a
 # process from spawning further processes, so check.mjs can only report FAIL
 # for a demo it was never allowed to start. A standard GitHub-hosted runner has

@@ -6,7 +6,7 @@
 //     copy, which taxes every update path, including the unwritten ones.
 //   after — one home, everything else computed on read: no path can forget,
 //     because there is nothing to remember.
-// Then the same disease on the real specimen (inventory.js): writeOff desyncs
+// Then the same disease on the real module (inventory.js): writeOff desyncs
 // the stored total and the low-stock list; inventory-fixed.js has no copies to desync.
 // Exit 0 iff the claims hold when actually run.
 import assert from 'node:assert/strict'
@@ -70,32 +70,32 @@ console.log(`AFTER same sequence: badge says ${remaining2()} — it asks the one
 assert.equal(remaining2(), 0)
 console.log('AFTER: the badge cannot disagree with the list — no second value exists to do the disagreeing.')
 
-// ---------- the real specimen: inventory.js vs inventory-fixed.js ----------
+// ---------- the real module: inventory.js vs inventory-fixed.js ----------
 // inventory.js stores four copies (running total, hand-synced low-stock list,
 // cart rows snapshotting price, per-mutator DOM writes). Two paths already forget.
-const loadSpecimen = (file, expose) => {
+const loadModule = (file, expose) => {
   const els = { stockEl: {}, lowStockEl: {}, cartCountEl: {}, priceEls: { 1: {}, 2: {} } }
   const ctx = vm.createContext({ ...els })
   vm.runInContext(readFileSync(join(here, file), 'utf8') + `\n__state = ${expose}`, ctx)
   return ctx.__state
 }
 
-const sick = loadSpecimen('inventory.js',
+const broken = loadModule('inventory.js',
   '{ receiveShipment, sell, writeOff, get products() { return products }, get totalStock() { return totalStock }, get lowStockIds() { return lowStockIds } }')
-sick.receiveShipment(2, 5) // Tee: 8 → 13, off the low-stock list
-sick.writeOff(2, 4)        // damaged Tees: 13 → 9 — writeOff forgets BOTH copies
-const sickTruth = sick.products.reduce((s, p) => s + p.stock, 0)
-console.log(`\nSPECIMEN inventory.js after writeOff: stored total ${sick.totalStock}, actual ${sickTruth}; low-stock list [${sick.lowStockIds}], actually low: [2]`)
-assert.equal(sick.totalStock, 53)     // the stored copy
-assert.equal(sickTruth, 49)           // the truth
-assert.equal(sick.lowStockIds.length, 0) // Tee is at 9 — low — and the hand-synced list missed it
+broken.receiveShipment(2, 5) // Tee: 8 → 13, off the low-stock list
+broken.writeOff(2, 4)        // damaged Tees: 13 → 9 — writeOff forgets BOTH copies
+const brokenTruth = broken.products.reduce((s, p) => s + p.stock, 0)
+console.log(`\nBROKEN inventory.js after writeOff: stored total ${broken.totalStock}, actual ${brokenTruth}; low-stock list [${broken.lowStockIds}], actually low: [2]`)
+assert.equal(broken.totalStock, 53)     // the stored copy
+assert.equal(brokenTruth, 49)           // the truth
+assert.equal(broken.lowStockIds.length, 0) // Tee is at 9 — low — and the hand-synced list missed it
 
-const fixed = loadSpecimen('inventory-fixed.js',
+const fixed = loadModule('inventory-fixed.js',
   '{ receiveShipment, sell, writeOff, get products() { return products }, totalStock, lowStockIds }')
 fixed.receiveShipment(2, 5)
 fixed.writeOff(2, 4)
 const fixedTruth = fixed.products.reduce((s, p) => s + p.stock, 0)
-console.log(`SPECIMEN inventory-fixed.js after writeOff: total() ${fixed.totalStock()}, actual ${fixedTruth}; lowStockIds() [${fixed.lowStockIds()}]`)
+console.log(`FIXED inventory-fixed.js after writeOff: total() ${fixed.totalStock()}, actual ${fixedTruth}; lowStockIds() [${fixed.lowStockIds()}]`)
 assert.equal(fixed.totalStock(), fixedTruth) // computed from the one home — cannot be stale
 assert.deepEqual([...fixed.lowStockIds()], [2])
 

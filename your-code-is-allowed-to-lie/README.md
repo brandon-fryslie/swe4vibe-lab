@@ -1,10 +1,10 @@
 # your-code-is-allowed-to-lie
 
-**The scar:** the members screen shows someone who quit in March. The function is called `getActiveMembers()` — and there's no filter in its four lines. The name kept saying "active." The function stopped meaning it. If the names can lie, and the comments can lie, and the stored numbers can lie, reading this codebase tells you nothing.
+**The symptom:** the members screen shows someone who quit in March. The function is called `getActiveMembers()` — and there's no filter in its four lines. The name kept saying "active." The function stopped meaning it. If the names can lie, and the comments can lie, and the stored numbers can lie, reading this codebase tells you nothing.
 
 **The disease:** unchecked representations. **Everything in your code that stands for something else is either checked by a machine or lying on a timer.** A function name represents behavior; a field name, a meaning and a unit; a stored count, the list it summarizes. Exactly one thing in the file is guaranteed true — the code that executes. Every claim *about* it drifts on a schedule, because updating the claims is part of no request anyone ever makes.
 
-This is the specimen behind the swe4vibe lesson of the same name.
+This is the runnable example behind the swe4vibe lesson of the same name.
 
 ## Files
 

@@ -8,7 +8,7 @@
 //   after — parts joined at seams: the tax is a value into computeSplit, the
 //     numbers stay numbers, and "what's Jamie's balance?" is one call with
 //     zero side effects.
-//   specimen — workout-report.js is the same disease as a poke-able file; the
+//   module — workout-report.js is the same disease as a poke-able file; the
 //     fixed pipeline produces byte-identical output (golden-output.txt) and
 //     imports purely (no printing on import).
 // Exit 0 iff every claim holds when actually run.
@@ -119,7 +119,7 @@ console.log('\nOne-call answer — "what\'s Jamie\'s balance?":', jamie.balance.
   '(no printing, no running the app)')
 console.log('runnable-alone pieces: before 1 (the whole app) / after 3 (computeSplit, money, renderTripReport)')
 
-// ---------- the specimen: workout-report.js / workout-report-fixed.js ----------
+// ---------- the module: workout-report.js / workout-report-fixed.js ----------
 const golden = readFileSync(join(here, 'golden-output.txt'), 'utf8').trimEnd()
 
 // the blob: its only runnable piece is the whole app, effects included
@@ -136,5 +136,5 @@ const pure = spawnSync(process.execPath,
   { encoding: 'utf8' })
 assert.equal(pure.stdout, 'PURE\n')
 
-console.log('\nspecimen: blob output === pipeline output === golden-output.txt, and the pipeline imports without printing')
+console.log('\nexample: blob output === pipeline output === golden-output.txt, and the pipeline imports without printing')
 console.log('\nclaims hold: the blob works until the first edit lands between its fused jobs; the parts version cannot break that way.')

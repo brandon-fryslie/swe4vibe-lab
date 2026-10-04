@@ -7,7 +7,7 @@
 //         different verdicts on different pages.
 //   after — one part that does one thing, completely, asking nothing serves
 //     both pages, takes the rule change exactly once, and runs with no DOM at all.
-// Then the same disease on the real specimen (booking.js): its calculators
+// Then the same disease on the real module (booking.js): its calculators
 // grab their page by element id and cannot run anywhere else; the pure pricing
 // core in booking-fixed.js runs right here, DOM-free.
 // Exit 0 iff the claims hold when actually run.
@@ -73,22 +73,22 @@ assert.equal(signupCheck(input), 'Plus addresses are not allowed')
 assert.equal(typeof globalThis.document, 'undefined') // no DOM anywhere in this script
 console.log(`AFTER, rule change (made once): both pages say ${JSON.stringify(signupCheck(input))} — and it just ran with no DOM in sight.`)
 
-// ---------- the real specimen: booking.js vs booking-fixed.js ----------
+// ---------- the real module: booking.js vs booking-fixed.js ----------
 // booking.js's calculators grab 'sat-hours' etc. from their page. On any other
 // page — or here, in plain Node — they throw.
-const loadSpecimen = (file, expose) => {
+const loadModule = (file, expose) => {
   const ctx = vm.createContext({ document: { getElementById: () => null }, fetch: () => {} })
   vm.runInContext(readFileSync(join(here, file), 'utf8') + `\n__state = ${expose}`, ctx)
   return ctx.__state
 }
 
-const sick = loadSpecimen('booking.js', '{ calcSaturdayInvoice }')
-assert.throws(sick.calcSaturdayInvoice, (e) => e.name === 'TypeError') // vm realm: match by name
-console.log('\nSPECIMEN booking.js off its page: calcSaturdayInvoice() THROWS — the whole room has to come with it.')
+const broken = loadModule('booking.js', '{ calcSaturdayInvoice }')
+assert.throws(broken.calcSaturdayInvoice, (e) => e.name === 'TypeError') // vm realm: match by name
+console.log('\nBROKEN booking.js off its page: calcSaturdayInvoice() THROWS — the whole room has to come with it.')
 
-const fixedParts = loadSpecimen('booking-fixed.js', '{ computeSubtotal, computeInvoiceTotal }')
+const fixedParts = loadModule('booking-fixed.js', '{ computeSubtotal, computeInvoiceTotal }')
 const subtotal = fixedParts.computeSubtotal({ hours: 4, guests: 60, isSunday: false })
 assert.equal(subtotal, 4 * 150 + 10 * 4) // $640, computed with zero DOM
-console.log(`SPECIMEN booking-fixed.js off its page: computeSubtotal(...) = $${subtotal} — inputs in, number out, runs anywhere.`)
+console.log(`FIXED booking-fixed.js off its page: computeSubtotal(...) = $${subtotal} — inputs in, number out, runs anywhere.`)
 
 console.log('\nclaims hold: the welded before cannot move and its copies drift; the after does one thing, completely, asking nothing.')

@@ -1,10 +1,10 @@
 # i-think-it-works
 
-**The scar:** the AI says **Done!** — checkmarks, confidence. You run the app, click the thing, it does the thing. And then the question you've never once been able to answer: *…is it done, though?* Every ship is a breath-hold.
+**The symptom:** the AI says **Done!** — checkmarks, confidence. You run the app, click the thing, it does the thing. And then the question you've never once been able to answer: *…is it done, though?* Every ship is a breath-hold.
 
 **The disease:** your goal was never given a checkable shape, so there is literally nothing for "done" to be checked against. **"It works" is a feeling; "it passes these checks" is a fact — and feelings don't survive contact with users.** When you ran the feature once, you verified one point in the space of things that can happen to that code — the same point the AI checked before saying Done, so your click added zero new evidence.
 
-This is the specimen behind the swe4vibe lesson of the same name.
+This is the runnable example behind the swe4vibe lesson of the same name.
 
 ## Files
 

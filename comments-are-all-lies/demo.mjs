@@ -69,7 +69,7 @@ for (const [s, w] of [[0, 0], [80, 2], [120, 1], [151, 3], [200, 10]]) {
   assert.equal(shippingFor(s, w), shippingForV2(s, w)) // identical behavior across the grid
 }
 
-// ---------- scoring.js: the live specimen, comments vs code ----------
+// ---------- scoring.js: the live module, comments vs code ----------
 const src = readFileSync(join(here, 'scoring.js'), 'utf8')
 
 console.log('\nscoring.js — running its comments as claims:')

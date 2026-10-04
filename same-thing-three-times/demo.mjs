@@ -4,7 +4,7 @@
 //     and a new variant inherits the quirks of whichever copy it was cloned from.
 //   after — one function + a table of named instances: a new kind is a row, and
 //     a kind physically cannot lack a feature (one code path to have it).
-//   specimen — alerts-fixed.js collapses alerts.js the same way and is
+//   module — alerts-fixed.js collapses alerts.js the same way and is
 //     output-identical for every channel, including at the truncation edges.
 // Exit 0 iff every claim holds when actually run.
 import assert from 'node:assert/strict'
@@ -78,8 +78,8 @@ assert.equal(makeCard('warning', 'm'), makeWarningCard('m'))
 console.log('AFTER — every kind dismissible; kinds that were right are byte-identical.')
 console.log('  → a kind CANNOT lack a feature: there is only one card code path for it to have.')
 
-// ---------- the specimen: alerts.js vs alerts-fixed.js, output-identical ----------
-// The specimen files have no exports (they're the file as you'd find it);
+// ---------- the module: alerts.js vs alerts-fixed.js, output-identical ----------
+// The module files have no exports (they're the file as you'd find it);
 // evaluate them and pull the builders out.
 const load = (file) => {
   const code = readFileSync(new URL(file, import.meta.url), 'utf8')
@@ -102,7 +102,7 @@ for (const [service, message] of cases) {
     checked++
   }
 }
-console.log(`\nspecimen: alerts-fixed.js is output-identical to alerts.js across ${checked} channel/input cases,`)
+console.log(`\nexample: alerts-fixed.js is output-identical to alerts.js across ${checked} channel/input cases,`)
 console.log('including the truncation edges — three functions were one function and a table all along.')
 
 console.log('\nclaims hold: the copies drift exactly as the lesson says; the table cannot.')

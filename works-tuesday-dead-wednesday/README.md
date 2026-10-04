@@ -1,6 +1,6 @@
 # works-tuesday-dead-wednesday
 
-**The scar:** same code — works Tuesday, dead Wednesday. Breaks on your friend's phone, works on yours, and somewhere in week two you type "it breaks if I click too fast."
+**The symptom:** same code — works Tuesday, dead Wednesday. Breaks on your friend's phone, works on yours, and somewhere in week two you type "it breaks if I click too fast."
 
 **The disease:** a race with no owner. **Your app never breaks randomly. It breaks when two things finish in an order nobody chose.** Two requests share one finish line — the same variable, the same screen — and no line of code says who's allowed to win, so arrival order decides. Network timing was an input to your program all along; nobody told you, so you never wrote code for it. The full walk-through is the swe4vibe lesson of the same name.
 

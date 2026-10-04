@@ -4,7 +4,7 @@
 //     plausible revenue number, with zero errors anywhere.
 //   after — failures throw at the boundary and render a visible error naming
 //     the cause; there is no path where a missing rate becomes a number.
-//   specimen — the warehouse dashboard (inventory.js) runs four realities:
+//   module — the warehouse dashboard (inventory.js) runs four realities:
 //     a stock outage renders "0 units" + REORDER NOW for every sku; a
 //     deliveries outage renders a FABRICATED schedule; inventory-fixed.js
 //     makes both loud — and both versions keep the one TRUE default
@@ -82,7 +82,7 @@ assert.equal(shown.outage.after, 'Revenue unavailable — rates API returned 503
 assert.equal(shown.formatChange.after, 'Revenue unavailable — no exchange rate for USD')
 console.log(`→ ${forgedTotal} doesn't look broken. It looks like a slow month.`)
 
-// ---------- the specimen: the warehouse dashboard, four realities ----------
+// ---------- the module: the warehouse dashboard, four realities ----------
 const fixture = JSON.parse(readFileSync(new URL('./sample-stock.json', import.meta.url), 'utf8'))
 const SKUS = Object.keys(fixture.counts)                       // WID-1, WID-2, GAD-3
 const DELIVERIES = [{ sku: 'WID-2', eta: 'Thursday' }]

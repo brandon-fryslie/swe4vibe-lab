@@ -25,7 +25,7 @@ const order = {
   shipping: 10,
 }
 
-// ---------- baseline: the diseased file, before anyone touches it ----------
+// ---------- baseline: the broken file, before anyone touches it ----------
 const io0 = capture()
 const baseline = updateOrderBefore(order, io0)
 console.log(`BEFORE (untouched): total $${baseline.toFixed(2)} — works fine. It always works fine on day one.`)

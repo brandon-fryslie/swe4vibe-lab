@@ -16,7 +16,7 @@ import assert from 'node:assert/strict'
 import { readFileSync } from 'node:fs'
 import { dirname, join } from 'node:path'
 import { fileURLToPath } from 'node:url'
-import * as sick from './plants.js'
+import * as broken from './plants.js'
 import * as fixed from './plants-fixed.js'
 
 const here = dirname(fileURLToPath(import.meta.url))
@@ -87,25 +87,25 @@ assert.equal(studyBadge({ minutesLogged: 30 }), '')
 assert.equal(studyBadge({ minutesLogged: 720 }), '10+ hours')
 console.log(`\nAFTER — derived count says ${memberCount()}, names say what they do, the unit lives in the field name.`)
 
-// ---------- plants.js: the live specimen, twelve claims, who checks them? ----------
+// ---------- plants.js: the live module, twelve claims, who checks them? ----------
 const src = readFileSync(join(here, 'plants.js'), 'utf8')
 console.log('\nplants.js — running its representations as claims:')
 
 // the stored copy is already stale: logStats says 3, the log holds 5
-assert.equal(sick.logStats.totalWaterings, 3)
-assert.equal(sick.careLog.length, 5)
-console.log(`  FALSE cache "logStats.totalWaterings" — says ${sick.logStats.totalWaterings}, the log holds ${sick.careLog.length}`)
+assert.equal(broken.logStats.totalWaterings, 3)
+assert.equal(broken.careLog.length, 5)
+console.log(`  FALSE cache "logStats.totalWaterings" — says ${broken.logStats.totalWaterings}, the log holds ${broken.careLog.length}`)
 
 // the name "getIndoorPlants" — the filter was edited away; it returns the patio plant too
-const indoor = sick.getIndoorPlants(sick.plants)
-assert.equal(indoor.length, sick.plants.length)
+const indoor = broken.getIndoorPlants(broken.plants)
+assert.equal(indoor.length, broken.plants.length)
 assert.ok(indoor.some((p) => p.spot === 'patio'))
 console.log('  FALSE name "getIndoorPlants" — returns everything, including the patio Basil')
 
 // the comment "driest first" over an alphabetical sort — with coincidence camouflage:
 // the wrong sort accidentally puts the right plant first, so eyeballing passes
-const queue = sick.wateringQueue(sick.plants)
-const byDryness = [...sick.plants].sort((a, b) => b.wateredDaysAgo - a.wateredDaysAgo)
+const queue = broken.wateringQueue(broken.plants)
+const byDryness = [...broken.plants].sort((a, b) => b.wateredDaysAgo - a.wateredDaysAgo)
 assert.equal(queue[0].name, byDryness[0].name) // the camouflage: first item looks right...
 assert.notDeepEqual(queue.map((p) => p.name), byDryness.map((p) => p.name)) // ...the order is a lie
 console.log(`  FALSE comment "driest first" — alphabetical; first item (${queue[0].name}) is coincidentally the driest`)
@@ -113,9 +113,9 @@ console.log(`  FALSE comment "driest first" — alphabetical; first item (${queu
 // the units contradiction: wateredLabel reads the field as HOURS (/24),
 // needsWater reads it as DAYS (>= 3). Undecidable inside the file — the fix
 // must flag it to the owner, not guess. Assert the contradiction is real:
-const monstera = sick.plants[0] // wateredDaysAgo: 30
-assert.equal(sick.wateredLabel(monstera), '1 days ago') // 30/24 → the "hours" reading
-assert.equal(sick.needsWater(monstera), true) // 30 >= 3 → the "days" reading
+const monstera = broken.plants[0] // wateredDaysAgo: 30
+assert.equal(broken.wateredLabel(monstera), '1 days ago') // 30/24 → the "hours" reading
+assert.equal(broken.needsWater(monstera), true) // 30 >= 3 → the "days" reading
 console.log('  FLAG  field "wateredDaysAgo" — one caller reads hours, one reads days; owner must decide')
 
 // ---------- plants-fixed.js: decidable lies fixed, nothing guessed ----------
@@ -125,8 +125,8 @@ assert.equal(fixed.logStats.totalWaterings, fixed.wateringLog.length)
 assert.equal(fixed.allPlants(fixed.plants).length, fixed.plants.length)
 assert.deepEqual(fixed.plantsByName(fixed.plants).map((p) => p.name), [...fixed.plants].map((p) => p.name).sort())
 // the units contradiction was NOT guessed: both readings preserved, flagged for the owner
-assert.equal(fixed.wateredLabel(fixed.plants[0]), sick.wateredLabel(sick.plants[0]))
-assert.equal(fixed.needsWater(fixed.plants[0]), sick.needsWater(sick.plants[0]))
+assert.equal(fixed.wateredLabel(fixed.plants[0]), broken.wateredLabel(broken.plants[0]))
+assert.equal(fixed.needsWater(fixed.plants[0]), broken.needsWater(broken.plants[0]))
 // true negatives survived: the why-comment (trimmed to its why) and the derived helper
 const fixedSrc = readFileSync(join(here, 'plants-fixed.js'), 'utf8')
 assert.match(fixedSrc, /succulents rot on a full pour/)

@@ -1,6 +1,6 @@
 # diff-you-cant-review
 
-**The scar:** "I approve diffs I don't fully understand. I'm scared of what I've already merged."
+**The symptom:** "I approve diffs I don't fully understand. I'm scared of what I've already merged."
 
 **The disease:** reviewing generated code line-by-line, like you're the author. You're not the author — and you don't need to be. In `pricing-v2.js`, the AI's refactor keeps the receipt identical to the penny and quietly breaks two promises the rest of the app relies on: it edits the caller's items in place, and pricing the same cart twice compounds the discount. No eyeball pass catches that, because the damage isn't on any line — it's at the *seam*, in what the function promises the code around it. Write the promises down as checks and the two-hundred-line body becomes the author's problem again.
 

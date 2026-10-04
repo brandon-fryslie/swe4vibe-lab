@@ -1,10 +1,10 @@
 # comments-are-all-lies
 
-**The scar:** 1am, a file you haven't opened in a month, a comment: `// students get 3 attempts per quiz`. You build the retry screen around three attempts. The code says `5`. The comment has said 3 since a version of this file that no longer exists — so now you read every comment and then read the code anyway, because you've been burned.
+**The symptom:** 1am, a file you haven't opened in a month, a comment: `// students get 3 attempts per quiz`. You build the retry screen around three attempts. The code says `5`. The comment has said 3 since a version of this file that no longer exists — so now you read every comment and then read the code anyway, because you've been burned.
 
 **The disease:** the what-comment. **A comment about *what* the code does is a copy of the code — and every copy drifts, so it's a lie on a timer.** Code is the only self-enforcing description of behavior; the prose above it is a second copy that nothing checks, breaks no test, and turns nothing red. The comments worth keeping say *why* — a reason, a constraint — because there's no original for that copy to drift from.
 
-This is the specimen behind the swe4vibe lesson of the same name.
+This is the runnable example behind the swe4vibe lesson of the same name.
 
 ## Files
 

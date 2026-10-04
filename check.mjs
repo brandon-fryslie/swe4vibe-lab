@@ -1,4 +1,4 @@
-// Runs every specimen's demo and reports the verdict.
+// Runs every example's demo and reports the verdict.
 // Exit 0 iff every demo exits 0. A demo exiting non-zero means a claimed
 // before-failure or after-immunity did not hold when executed.
 import { readdirSync, existsSync } from 'node:fs'
@@ -7,19 +7,19 @@ import { dirname, join } from 'node:path'
 import { fileURLToPath } from 'node:url'
 
 const root = dirname(fileURLToPath(import.meta.url))
-const specimens = readdirSync(root, { withFileTypes: true })
+const examples = readdirSync(root, { withFileTypes: true })
   .filter((d) => d.isDirectory() && existsSync(join(root, d.name, 'demo.mjs')))
   .map((d) => d.name)
   .sort()
 
 // [LAW:no-silent-failure] an empty run must not read as a green run
-if (specimens.length === 0) {
-  console.error('FAIL: no specimens found (no directory contains a demo.mjs)')
+if (examples.length === 0) {
+  console.error('FAIL: no examples found (no directory contains a demo.mjs)')
   process.exit(1)
 }
 
 let failed = 0
-for (const name of specimens) {
+for (const name of examples) {
   const r = spawnSync(process.execPath, ['demo.mjs'], { cwd: join(root, name), encoding: 'utf8' })
   if (r.status === 0) {
     console.log(`PASS ${name}`)
@@ -34,5 +34,5 @@ for (const name of specimens) {
   }
 }
 
-console.log(`\n${specimens.length - failed}/${specimens.length} specimens hold their claims`)
+console.log(`\n${examples.length - failed}/${examples.length} examples hold their claims`)
 process.exit(failed === 0 ? 0 : 1)
