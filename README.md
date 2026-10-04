@@ -64,7 +64,7 @@ Every specimen maps to one swe4vibe lesson (same name). The free one — `fixing
 
 ## Teaching order
 
-The course walks these scars in a deliberate sequence — it opens on the wall you're already at, threads each scar into the next, and closes on the promise that the list is finite. The directories stay alphabetical so no single ordering is baked into the filesystem; this is the reading order, and each specimen names the one software-engineering law it makes concrete:
+The course walks these scars in a deliberate sequence — it opens on the wall you're already at, threads each scar into the next, and closes on the promise that these failures recur: the same well-known defects, each with a name, a cause, and a fix. The directories stay alphabetical so no single ordering is baked into the filesystem; this is the reading order, and each specimen names the one software-engineering law it makes concrete:
 
 1. `fixing-one-breaks-three` — decomposition *(the free lesson, published whole)*
 2. `ai-goes-in-circles` — make illegal states unrepresentable
@@ -87,6 +87,6 @@ The course walks these scars in a deliberate sequence — it opens on the wall y
 19. `diff-you-cant-review` — parts and seams *(in practice)*
 20. `breaks-things-from-a-distance` — no shared mutable globals
 21. `one-change-twenty-files` — locality, or a seam
-22. `one-more-option-broke-everything` — no mode explosion *(the list is finite)*
-23. `single-enforcer` — one checkpoint per rule *(extension, appended after the finite list)*
+22. `one-more-option-broke-everything` — no mode explosion *(the terminal lesson)*
+23. `single-enforcer` — one checkpoint per rule *(extension, appended after the terminal lesson)*
 
